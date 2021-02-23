@@ -2,15 +2,16 @@ pragma solidity >=0.6.0 <0.7.0;
 //SPDX-License-Identifier: MIT
 
 import "hardhat/console.sol";
-//import "@openzeppelin/contracts/access/Ownable.sol"; //https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol
+import "@openzeppelin/contracts/access/Ownable.sol"; //https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-contract YourContract {
+contract DGens is ERC721 {
 
   event SetPurpose(address sender, string purpose);
 
-  string public purpose = "🛠 Programming Unstoppable Money";
+  string public purpose = "dGens - NFTs for degenerates";
 
-  constructor() public {
+  constructor() ERC721("DGens", "DGEN") public {
     // what should we do on deploy?
   }
 

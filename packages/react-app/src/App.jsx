@@ -111,12 +111,12 @@ function App(props) {
   //console.log("💲 myMainnetBalance:",myMainnetBalance)
   //
 
-  // keep track of a variable from the contract in the local React state:
-  const purpose = useContractReader(readContracts,"YourContract", "purpose")
+  // keep track of a variable from the contract in the local React state:  
+  const purpose = useContractReader(readContracts, "dGens", "purpose")
   console.log("🤗 purpose:",purpose)
 
   //📟 Listen for broadcast events
-  const setPurposeEvents = useEventListener(readContracts, "YourContract", "SetPurpose", localProvider, 1);
+  const setPurposeEvents = useEventListener(readContracts, "dGens", "SetPurpose", localProvider, 1);
   console.log("📟 SetPurpose events:",setPurposeEvents)
 
   /*
@@ -215,7 +215,7 @@ function App(props) {
             */}
 
             <Contract
-              name="YourContract"
+              name="DGens"
               signer={userProvider.getSigner()}
               provider={localProvider}
               address={address}
